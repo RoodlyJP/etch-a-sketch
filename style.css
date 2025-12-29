@@ -1,8 +1,8 @@
 #container{
     display: flex; 
     flex-wrap: wrap; 
-    width: 50vw;
-    height: 50vh;
+    width: 75vw;
+    height: 75vh;
 
 }
 .colorful{
@@ -10,8 +10,4 @@
 }
 .incolor{
      background-color: blue;
-}
-.incolor, .colorful{
-    width: calc(100% / 16); 
-    height: calc(100% / 16);
 }
