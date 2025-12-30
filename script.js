@@ -4,18 +4,13 @@ let userGridSize = 0;
 
 function createGrid() {
     for(let i = 0; i<gridSize * gridSize; i++) {
+        let opacity = 0.0;
         const div = document.createElement("div");
         div.style.cssText = `width: calc(100% / ${gridSize}); height: calc(100% / ${gridSize})`;
-        div.classList.add("nocolor");
         div.addEventListener("mouseover", () => {
-            if(div.getAttribute("class") == "nocolor") {
-                div.classList.remove("nocolor");
-                div.classList.add("colorful");
-            } else {
-                div.classList.remove("colorful");
-                div.classList.add("nocolor");
-            }
-        
+            div.classList.add("paint");
+            opacity = Math.min(opacity + 0.1, 1);
+            div.style.opacity = opacity;
         });
         container.appendChild(div);
     }
@@ -34,7 +29,7 @@ button.addEventListener("click", ()=> {
     } while(userGridSize < 4 || userGridSize > 100);
     gridSize = userGridSize;
     
-    container.replaceChildren();
+    container.innerHTML = "";
     createGrid();
 });
 

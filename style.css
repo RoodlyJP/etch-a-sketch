@@ -11,11 +11,8 @@ body{
     flex-wrap: wrap; 
     width: 75vw;
     height: 75vh;
-
+    border: 1px solid black;
 }
-.colorful{
-    background-color: red;
-}
-.nocolor{
-     background-color: blue;
+.paint{
+    background-color: black;
 }
